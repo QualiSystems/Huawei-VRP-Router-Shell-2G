@@ -8,8 +8,7 @@ from cloudshell.devices.runners.state_runner import StateRunner
 from cloudshell.devices.standards.networking.configuration_attributes_structure import \
     create_networking_resource_from_context
 from cloudshell.networking.networking_resource_driver_interface import NetworkingResourceDriverInterface
-from cloudshell.shell.core.driver_context import InitCommandContext, ResourceCommandContext, \
-    AutoLoadCommandContext, AutoLoadDetails
+from cloudshell.shell.core.driver_context import ResourceCommandContext
 from cloudshell.shell.core.driver_utils import GlobalLock
 from cloudshell.shell.core.resource_driver_interface import ResourceDriverInterface
 
@@ -155,6 +154,7 @@ class HuaweiVRPRouterShellDriver(ResourceDriverInterface, NetworkingResourceDriv
             reservation info
         :param str folder_path: The path to the folder in which the configuration file will be saved
         :param str configuration_type: startup or running config
+        :param str vrf_management_name: vrf management configuration name if any
         :return The configuration file name
         :rtype: str
         """
@@ -186,6 +186,7 @@ class HuaweiVRPRouterShellDriver(ResourceDriverInterface, NetworkingResourceDriv
             current configuration
         :param str configuration_type: Specify whether the file should update the startup or
             running config
+        :param str vrf_management_name: vrf management configuration name if any
         """
 
         logger = get_logger_with_thread_id(context)
@@ -211,6 +212,7 @@ class HuaweiVRPRouterShellDriver(ResourceDriverInterface, NetworkingResourceDriv
         :param ResourceCommandContext context: The context object for the command with resource and
             reservation info
         :param str path: path to tftp server where firmware file is stored
+        :param str vrf_management_name: vrf management configuration name if any
         """
 
         logger = get_logger_with_thread_id(context)
