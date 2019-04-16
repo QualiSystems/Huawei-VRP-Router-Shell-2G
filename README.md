@@ -1,5 +1,3 @@
-# Huawei-VRP-Router-Shell-2G
-
 ![Image][1]
 
 # **Huawei VRP Router Shell 2G**  
