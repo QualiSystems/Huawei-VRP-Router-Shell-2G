@@ -1,1 +1,4 @@
-cloudshell-networking-huawei>=3.0, <3.1
+cloudshell-automation-api>=9.2
+cloudshell-shell-networking-standard==5.0.4
+cloudshell-networking-huawei~=4.0
+cloudshell-shell-core>=5.0,<6.0

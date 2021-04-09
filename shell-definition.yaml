@@ -3,8 +3,8 @@ tosca_definitions_version: tosca_simple_yaml_1_0
 metadata:
   template_name: Huawei VRP Router Shell 2G
   template_author: Quali
-  template_version: 1.0.0
-  template_icon: shell-icon.png
+  template_version: 2.0.0
+  template_icon: Huawei.png
 
 description: >
   This Shell supports Huawei Router devices that run VRP
@@ -63,12 +63,6 @@ node_types:
           SNMP V3 Private Key:
             description: Relevant only in case SNMP V3 is in use.
             type: string
-          SNMP Version:
-            type: string
-            default: ''
-            description: The version of SNMP to use. Possible values are v1, v2c and v3.
-            constraints:
-              - valid_values: [ v1, v2c, v3]
           SNMP V3 Authentication Protocol:
             description: Relevant only in case SNMP V3 is in use.
             type: string
@@ -81,6 +75,12 @@ node_types:
             default: No Privacy Protocol
             constraints:
               - valid_values: [No Privacy Protocol, DES, 3DES-EDE, AES-128, AES-192, AES-256]
+          SNMP Version:
+            type: string
+            default: ''
+            description: The version of SNMP to use. Possible values are v1, v2c and v3.
+            constraints:
+              - valid_values: [ v1, v2c, v3]
           Enable SNMP:
             description: If set to True and SNMP isn’t enabled yet in the device the Shell will automatically enable SNMP in the device when Autoload command is called. SNMP must be enabled on the device for the Autoload command to run successfully. True by default.
             type: boolean
@@ -127,7 +127,7 @@ node_types:
             default: 0
     artifacts:
       icon:
-        file: shell-icon.png
+        file: Huawei.png
         type: tosca.artifacts.File
       driver:
         file: HuaweiVRPRouterShell2GDriver.zip
